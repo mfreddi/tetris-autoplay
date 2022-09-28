@@ -8,11 +8,43 @@
   <title>tetris</title>
 </head>
 <body>
-  <div class="game" style="width:350px; height:500px;"></div>
+<section id="versus">
+  <article id="versus-arena">
+    <div class="game-holder" id="tetris-versus-1">
+      <div class="score">0</div>
+        <div class="game"></div>
+      </div>
+      <div class="game-holder" id="tetris-versus-2">
+        <div class="score">0</div>
+      <div class="game"></div>
+    </div>
+  </article>
+</section>
 </body>
 <script src="./jquery-1.11.1.min.js"></script>
 <script src="./blockrain.jquery.min.js"></script>
 <script>
-    $('.game').blockrain({ autoplay: true, autoplayRestart: true });
+  var $versus1 = $('#tetris-versus-1 .game').blockrain({
+    autoplay: true,
+    autoplayRestart: true,
+    speed: versusSpeed,
+    onGameOver: function() {
+      $versus1.blockrain('restart');
+      $versus2.blockrain('restart');
+      var $score = $versus2.parent().find('.score');
+      $score.text( parseInt($score.text()) + 1 );
+    }
+  });
+  var $versus2 = $('#tetris-versus-2 .game').blockrain({
+    autoplay: true,
+    autoplayRestart: true,
+    speed: versusSpeed,
+    onGameOver: function() {
+      $versus1.blockrain('restart');
+      $versus2.blockrain('restart');
+      var $score = $versus1.parent().find('.score');
+      $score.text( parseInt($score.text()) + 1 );
+    }
+  });
 </script>
 </html>
