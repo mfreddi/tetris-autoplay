@@ -72,7 +72,7 @@ border-collapse:collapse;
 border-spacing:0}td,th{
 padding:0}section{
 text-align:center;
-padding:100px 0}section header{
+padding:0}section header{
 margin-bottom:60px;
 padding:0 20px}section header h1{
 font-weight:normal;
@@ -304,17 +304,8 @@ background-position:-70px 0}#versus-arena{
 background:#000;
 width:590px;
 height:375px;
-border-radius:50%/5%;
 position:relative;
-padding-top:45px}#versus-arena:before{
-content:"";
-background:#000;
-position:absolute;
-top:5%;
-bottom:5%;
-left:-5%;
-right:-5%;
-border-radius:5%/50%}#versus-arena .game-holder{
+padding-top:45px}#versus-arena .game-holder{
 display:inline-block;
 vertical-align:middle;
 margin:0 15px;
