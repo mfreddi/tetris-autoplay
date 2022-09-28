@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./blockrain.css">
+    <link rel="stylesheet" href="./style.css">
   <title>tetris</title>
 </head>
 <body>
@@ -27,7 +28,6 @@
   var $versus1 = $('#tetris-versus-1 .game').blockrain({
     autoplay: true,
     autoplayRestart: true,
-    speed: versusSpeed,
     onGameOver: function() {
       $versus1.blockrain('restart');
       $versus2.blockrain('restart');
@@ -38,7 +38,6 @@
   var $versus2 = $('#tetris-versus-2 .game').blockrain({
     autoplay: true,
     autoplayRestart: true,
-    speed: versusSpeed,
     onGameOver: function() {
       $versus1.blockrain('restart');
       $versus2.blockrain('restart');
